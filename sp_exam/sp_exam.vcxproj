@@ -128,8 +128,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />
-    <ClCompile Include="_1_dll.h" />
+    <ClCompile Include="tasks.h" />
     <ClCompile Include="_1_dll.c" />
+    <ClCompile Include="_4_text_files.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

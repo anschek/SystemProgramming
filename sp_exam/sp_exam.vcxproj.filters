@@ -18,10 +18,13 @@
     <ClCompile Include="main.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="_1_dll.h">
+    <ClCompile Include="tasks.h">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
     <ClCompile Include="_1_dll.c">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="_4_text_files.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,1 +1,0 @@
-int _1_dll_Test();

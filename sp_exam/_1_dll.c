@@ -17,7 +17,7 @@
 // 7. вызов
 // 8. высвобождение памяти от библиотеки
 
-#include"_1_dll.h"
+#include"tasks.h"
 #include <stdio.h>
 #include <Windows.h>
 #define PATH L"_1_dll.dll"
