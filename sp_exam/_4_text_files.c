@@ -19,10 +19,10 @@
 #include <io.h>
 #include <fcntl.h>
 
-HANDLE Open(LPCWSTR fileName, DWORD desiredAccess) {
+HANDLE Open(LPCWSTR file_name, DWORD desired_access) {
 	return CreateFileW(
-		fileName,
-		desiredAccess,
+		file_name,
+		desired_access,
 		NULL,
 		NULL,
 		OPEN_EXISTING,
@@ -31,40 +31,40 @@ HANDLE Open(LPCWSTR fileName, DWORD desiredAccess) {
 	);
 }
 
-int Read(HANDLE fileHandle, LPWSTR buffer, size_t bufferCount) {
-	int bytesRead; // сколько удалось считать байтов
+int Read(HANDLE file_handle, LPWSTR buffer, size_t buffer_count) {
+	int bytes_read; // сколько удалось считать байтов
 	ReadFile(
-		fileHandle,
+		file_handle,
 		buffer,
-		bufferCount * sizeof(WCHAR),
-		&bytesRead,
+		buffer_count * sizeof(WCHAR),
+		&bytes_read,
 		NULL
 	);
-	return bytesRead;
+	return bytes_read;
 }
 
-int Write(HANDLE hFile, LPWSTR buffer) {
-	int bytesWrite; // сколько удалось считать байтов
+int Write(HANDLE file_handle, LPWSTR buffer) {
+	int bytes_write; // сколько удалось считать байтов
 	WriteFile(
-		hFile,
+		file_handle,
 		buffer,
 		wcslen(buffer) * sizeof(WCHAR),
-		&bytesWrite,
+		&bytes_write,
 		NULL
 	);
-	return bytesWrite;
+	return bytes_write;
 }
 
-int ChangeFilePosition(HANDLE fileHandle, DWORD moveMethod) {
+int ChangeFilePosition(HANDLE file_handle, DWORD move_method) {
 	return SetFilePointer(
-		fileHandle,
+		file_handle,
 		NULL,
 		NULL,
-		moveMethod
+		move_method
 	);
 }
 
-int _4_text_files_Test() {
+int _4_textFiles_Test() {
 	// Устанавливаем кодовую страницу консоли на UTF-16
 	_setmode(_fileno(stdout), _O_U16TEXT);
 	_setmode(_fileno(stdin), _O_U16TEXT);
@@ -79,23 +79,23 @@ int _4_text_files_Test() {
 	}
 
 	// читаем из первого
-	int bufferCount = 100;
-	LPWSTR buffer = calloc(bufferCount, sizeof(WCHAR));
-	int bytesRead = Read(input, buffer, bufferCount);
-	wprintf(L"%d bytes: %s\n", bytesRead, buffer);
+	int buffer_count = 100;
+	LPWSTR buffer = calloc(buffer_count, sizeof(WCHAR));
+	int bytes_read = Read(input, buffer, buffer_count);
+	wprintf(L"%d bytes: %s\n", bytes_read, buffer);
 
-	if (bytesRead == 0) return -1;
+	if (bytes_read == 0) return -1;
 
 	// записываем во второй (для добавления данных смещаем позицию)
-	int outputOffset = ChangeFilePosition(output, FILE_END);
-	if (outputOffset == INVALID_SET_FILE_POINTER) {
+	int output_offset = ChangeFilePosition(output, FILE_END);
+	if (output_offset == INVALID_SET_FILE_POINTER) {
 		wprintf(L"Ошибка установки курсора: %d\n", GetLastError());
 		return -1;
 	}
 	
-	int bytesWrite = Write(output, buffer);
-	wprintf(L"%d bytes", bytesWrite);
-	if (bytesWrite == 0) return -1;
+	int bytes_write = Write(output, buffer);
+	wprintf(L"%d bytes", bytes_write);
+	if (bytes_write == 0) return -1;
 
 	// закрытие дескрипторов
 	CloseHandle(input);
