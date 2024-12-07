@@ -127,10 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="hooks.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="tasks.h" />
     <ClCompile Include="_1_dll.c" />
     <ClCompile Include="_4_text_files.c" />
+    <ClCompile Include="_9_lpwstr_to_number.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
