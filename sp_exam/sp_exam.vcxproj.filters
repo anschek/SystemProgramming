@@ -36,5 +36,8 @@
     <ClCompile Include="_28_fun_ptr.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
+    <ClCompile Include="_13_str_to_number_array.c">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
