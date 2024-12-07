@@ -33,5 +33,8 @@
     <ClCompile Include="_9_lpwstr_to_number.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
+    <ClCompile Include="_28_fun_ptr.c">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

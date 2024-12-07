@@ -131,6 +131,7 @@
     <ClCompile Include="main.c" />
     <ClCompile Include="tasks.h" />
     <ClCompile Include="_1_dll.c" />
+    <ClCompile Include="_28_fun_ptr.c" />
     <ClCompile Include="_4_text_files.c" />
     <ClCompile Include="_9_lpwstr_to_number.c" />
   </ItemGroup>
