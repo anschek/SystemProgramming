@@ -39,5 +39,8 @@
     <ClCompile Include="_13_str_to_number_array.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
+    <ClCompile Include="_14_registry_io.c">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
