@@ -134,6 +134,7 @@
     <ClCompile Include="_14_registry_io.c" />
     <ClCompile Include="_17_registry_io_numbers.c" />
     <ClCompile Include="_1_dll.c" />
+    <ClCompile Include="_25_list.c" />
     <ClCompile Include="_28_fun_ptr.c" />
     <ClCompile Include="_4_text_files.c" />
     <ClCompile Include="_9_lpwstr_to_number.c" />

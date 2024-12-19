@@ -4,4 +4,5 @@ int _9_lpwstrToNum_Test();
 int _13_strToArrayOfNumbers_Test();
 int _14_registryInOutStrings_Test();
 int _17_registryInOutNumbers_Test();
+int _24_list_Test();
 int _28_funPtr_Test();
