@@ -6,6 +6,7 @@
 #include <fcntl.h>
 
 #define UNNAMED_PIPE_TASK 1
+#define LAUNCH_SIMPLE_PROCESS 2
 
 void readAndPrintToConsole(HANDLE hRead) {
 	WCHAR* buffer = calloc(255, sizeof(WCHAR));
@@ -33,16 +34,21 @@ int _29_unnamedPipe(HANDLE hRead, HANDLE hWrite) {
 
 int main(int argc, char* argv[])
 {
-	_setmode(_fileno(stdout), _O_U16TEXT);
-	_setmode(_fileno(stdin), _O_U16TEXT);
-
 	HANDLE hRead, hWrite;//дескрипторы чтения и записи в анонимный канал
 	switch (atoi(argv[0]))
 	{
-	case UNNAMED_PIPE_TASK:
+	case UNNAMED_PIPE_TASK:	
+		_setmode(_fileno(stdout), _O_U16TEXT);
+		_setmode(_fileno(stdin), _O_U16TEXT);
 		hWrite = (HANDLE)atoi(argv[1]);
 		hRead = (HANDLE)atoi(argv[2]);
 		return _29_unnamedPipe(hRead, hWrite);
+
+	case LAUNCH_SIMPLE_PROCESS:
+		for (int i = 0; i < argc; ++i) {
+			printf("%s\n", argv[i]);
+		}
+		return 100500;
 
 	default:
 		wprintf(L"Ошибка аргумента\n");
