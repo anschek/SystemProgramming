@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{741a26d1-6b10-4e87-a180-b0ce0dea3025}</ProjectGuid>
-    <RootNamespace>spexam</RootNamespace>
+    <ProjectGuid>{baac6843-48f9-4f98-a8c2-13938f0d06fd}</ProjectGuid>
+    <RootNamespace>My23dll</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -40,13 +40,13 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -127,24 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="hooks.c" />
-    <ClCompile Include="main.c" />
-    <ClCompile Include="tasks.h" />
-    <ClCompile Include="_11_threads.c" />
-    <ClCompile Include="_13_str_to_number_array.c" />
-    <ClCompile Include="_14_registry_io.c" />
-    <ClCompile Include="_17_registry_io_numbers.c" />
-    <ClCompile Include="_1_dll.c" />
-    <ClCompile Include="_20_message_box_from_file.c" />
-    <ClCompile Include="_21_process.c" />
-    <ClCompile Include="_23_dll_segment_length.c" />
-    <ClCompile Include="_25_list.c" />
-    <ClCompile Include="_26_binary_files.c" />
-    <ClCompile Include="_27_cmd_args.c" />
-    <ClCompile Include="_28_fun_ptr.c" />
-    <ClCompile Include="_29_unnamed_pipe.c" />
-    <ClCompile Include="_4_text_files.c" />
-    <ClCompile Include="_9_lpwstr_to_number.c" />
+    <ClCompile Include="dll_main.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
