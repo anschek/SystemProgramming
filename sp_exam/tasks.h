@@ -7,3 +7,4 @@ int _17_registryInOutNumbers_Test();
 int _20_messageBoxGromUtfFile_Test();
 int _24_list_Test();
 int _28_funPtr_Test();
+int _29_unnamedPipe_Test();

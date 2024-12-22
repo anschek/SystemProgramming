@@ -137,6 +137,7 @@
     <ClCompile Include="_20_message_box_from_file.c" />
     <ClCompile Include="_25_list.c" />
     <ClCompile Include="_28_fun_ptr.c" />
+    <ClCompile Include="_29_unnamed_pipe.c" />
     <ClCompile Include="_4_text_files.c" />
     <ClCompile Include="_9_lpwstr_to_number.c" />
   </ItemGroup>
