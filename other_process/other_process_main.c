@@ -35,7 +35,7 @@ int _29_unnamedPipe(HANDLE hRead, HANDLE hWrite) {
 int main(int argc, char* argv[])
 {
 	HANDLE hRead, hWrite;//дескрипторы чтения и записи в анонимный канал
-	switch (atoi(argv[0]))
+	switch (atoi(argv[1]))
 	{
 	case UNNAMED_PIPE_TASK:	
 		_setmode(_fileno(stdout), _O_U16TEXT);
@@ -48,6 +48,7 @@ int main(int argc, char* argv[])
 		for (int i = 0; i < argc; ++i) {
 			printf("%s\n", argv[i]);
 		}
+		system("pause");
 		return 100500;
 
 	default:
