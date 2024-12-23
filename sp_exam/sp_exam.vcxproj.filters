@@ -72,5 +72,8 @@
     <ClCompile Include="_10_buffer.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
+    <ClCompile Include="_18_threading_stopwatch.c">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
