@@ -78,5 +78,8 @@
     <ClCompile Include="hooks.c">
       <Filter>Файлы заголовков</Filter>
     </ClCompile>
+    <ClCompile Include="_22_exit_codes_analysis.c">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

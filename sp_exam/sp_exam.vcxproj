@@ -139,6 +139,7 @@
     <ClCompile Include="_1_dll.c" />
     <ClCompile Include="_20_message_box_from_file.c" />
     <ClCompile Include="_21_process.c" />
+    <ClCompile Include="_22_exit_codes_analysis.c" />
     <ClCompile Include="_23_dll_segment_length.c" />
     <ClCompile Include="_25_list.c" />
     <ClCompile Include="_26_binary_files.c" />
