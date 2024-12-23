@@ -18,16 +18,10 @@
     <ClCompile Include="main.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="tasks.h">
-      <Filter>Файлы ресурсов</Filter>
-    </ClCompile>
     <ClCompile Include="_1_dll.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
     <ClCompile Include="_4_text_files.c">
-      <Filter>Файлы ресурсов</Filter>
-    </ClCompile>
-    <ClCompile Include="hooks.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
     <ClCompile Include="_9_lpwstr_to_number.c">
@@ -74,6 +68,15 @@
     </ClCompile>
     <ClCompile Include="_18_threading_stopwatch.c">
       <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="_8_num_to_string_and_concat.c">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="tasks.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClCompile>
+    <ClCompile Include="hooks.c">
+      <Filter>Файлы заголовков</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
