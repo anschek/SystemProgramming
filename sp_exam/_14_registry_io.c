@@ -45,6 +45,6 @@ int _14_registryInOutStrings_Test() {
 
 	status = RegDeleteKey(HKEY_CURRENT_USER, valueName);
 	if (status != ERROR_SUCCESS) return status;
-	wprintf(L"sucess deleting\n", buffer);
+	wprintf(L"sucess deleting\n");
 	return 0;
 }

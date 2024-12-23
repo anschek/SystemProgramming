@@ -1,12 +1,17 @@
 int _1_dll_Test();
 int _4_textFiles_Test();
+int _8_numToStringAndConcat_Test();
 int _9_lpwstrToNum_Test();
+int _10_bufferInOutStrings_Test();
 int _11_threads_Test();
 int _13_strToArrayOfNumbers_Test();
 int _14_registryInOutStrings_Test();
 int _17_registryInOutNumbers_Test();
+int _18_threadingStopwatch_Test();
+int _19_factorialInSingleThread_Test();
 int _20_messageBoxGromUtfFile_Test();
 int _21_externalProcessLaunch_Test();
+int _22_analysisOfExitCodes_Test();
 int _23_dllSegmentLength_Test();
 int _25_list_Test();
 int _26_binaryFiles_Test();

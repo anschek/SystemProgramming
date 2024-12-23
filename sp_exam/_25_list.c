@@ -62,7 +62,7 @@ void FindExtremes(List* list, List** min_elem, List** max_elem) {
 	}
 }
 
-int _24_list_Test() {
+int _25_list_Test() {
 	int n = 10, min = -50, max = 51;
 	List* list = InitList(n, min, max);
 	PrintList(list);
