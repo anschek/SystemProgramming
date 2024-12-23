@@ -69,5 +69,8 @@
     <ClCompile Include="_23_dll_segment_length.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
+    <ClCompile Include="_10_buffer.c">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

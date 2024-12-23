@@ -130,6 +130,7 @@
     <ClCompile Include="hooks.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="tasks.h" />
+    <ClCompile Include="_10_buffer.c" />
     <ClCompile Include="_11_threads.c" />
     <ClCompile Include="_13_str_to_number_array.c" />
     <ClCompile Include="_14_registry_io.c" />
