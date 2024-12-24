@@ -7,6 +7,7 @@
 // 3. функция записи
 // 4. закрытие дескрипторов и освобождение памяти
 
+#include"tasks.h"
 #include<stdio.h>
 #include <sys/stat.h> //содержатся флаги режимов доступа к файлам (mode)
 #include <fcntl.h> //содержатся флаги открытия файлов (flags)
@@ -44,7 +45,7 @@ void WriteByHandle(int hFile, char* buffer){
     printf("записано байт: %d", writtenBytes);
 }
 
-int main(){
+int _5_textFiles_Test(){
 
     int hReadFile = OpenWithFlags("./input.txt", O_RDONLY);
     char* buffer = ReadByHandle(hReadFile);
