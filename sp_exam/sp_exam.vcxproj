@@ -150,6 +150,7 @@
     <ClCompile Include="_29_unnamed_pipe.c" />
     <ClCompile Include="_4_text_files.c" />
     <ClCompile Include="_6_hooks_get_key_name_text.c" />
+    <ClCompile Include="_7_hooks_get_ascii_key.c" />
     <ClCompile Include="_8_num_to_string_and_concat.c" />
     <ClCompile Include="_9_lpwstr_to_number.c" />
   </ItemGroup>

@@ -1,6 +1,7 @@
 int _1_dll_Test();
 int _4_textFiles_Test();
 int _6_hooksGetKeyNameText_Test();
+int _7_hooksGetAsciiKey_Test();
 int _8_numToStringAndConcat_Test();
 int _9_lpwstrToNum_Test();
 int _10_bufferInOutStrings_Test();

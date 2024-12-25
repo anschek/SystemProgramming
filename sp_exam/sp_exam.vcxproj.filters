@@ -90,5 +90,8 @@
     <ClCompile Include="_6_hooks_get_key_name_text.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
+    <ClCompile Include="_7_hooks_get_ascii_key.c">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
