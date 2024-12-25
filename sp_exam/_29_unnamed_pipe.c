@@ -36,14 +36,15 @@ int _29_unnamedPipe_Test() {
 		NULL,		// дескриптор безопасности
 		TRUE		// разрешается наследование дескрипторов
 	};
-
-	CreatePipe( // создание канала
+	// СОЗДАНИЕ КАНАЛА
+	CreatePipe( 
 		&hRead,	
 		&hWrite,
 		&sa,	
 		0		// размер буфера
 	);
 
+	// СОЗДАНИЕ ПРОЦЕССА И ПЕРЕДАЧА ДЕСКРИПТОРОВ КАНАЛА
 	size_t messageCount = 100;
 	LPCWSTR otherProcessArgs = calloc(messageCount, sizeof(WCHAR));
 	swprintf(otherProcessArgs, messageCount * sizeof(WCHAR), L"%d %d %d", 1, hWrite, hRead);
@@ -72,14 +73,18 @@ int _29_unnamedPipe_Test() {
 	free(otherProcessArgs);
 	CloseHandle(hRead);// закрываем дескриптор для чтения (сервер только пишет)
 
+	// ОТПРАВКА КЛИЕНТУ ДВУХ СООБЩЕНИЙ ЧЕРЕЗ ПАУЗУ
+
 	int written;
-	LPCWSTR message = L"Сообщение для благодарных потомков";
-	WriteFile(hWrite, message, wcslen(message) * sizeof(WCHAR), &written, NULL); // запись в канал
+	LPCWSTR message = calloc(100, sizeof(WCHAR));
+	for (int i = 0; i < 3; ++i) {
+		swprintf(message, 100, L"Сообщение от родителя [%d]\n", i);
+		WriteFile(hWrite, message, wcslen(message) * sizeof(WCHAR), &written, NULL); // запись в канал
+		wprintf(L"Родитель записал %d байт\n", written);
+		Sleep(300);
+	}
 
-	system("pause");
-
-	message = L"сообщ2";
-	WriteFile(hWrite, message, wcslen(message) * sizeof(WCHAR), &written, NULL);// запись в канал 2
+	// ОЧИСТКА
 
 	CloseHandle(hWrite); 
 	WaitForSingleObject(pi->hProcess, INFINITE);//ожидание завершения дочернего процесса
