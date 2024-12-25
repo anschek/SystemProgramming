@@ -134,6 +134,7 @@
     <ClCompile Include="_11_threads.c" />
     <ClCompile Include="_13_str_to_number_array.c" />
     <ClCompile Include="_14_registry_io.c" />
+    <ClCompile Include="_15_hooks_get_mouse_button_name.c" />
     <ClCompile Include="_16_clipboard_and_processes.c" />
     <ClCompile Include="_17_registry_io_numbers.c" />
     <ClCompile Include="_18_threading_stopwatch.c" />

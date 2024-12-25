@@ -93,5 +93,8 @@
     <ClCompile Include="_7_hooks_get_ascii_key.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
+    <ClCompile Include="_15_hooks_get_mouse_button_name.c">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
