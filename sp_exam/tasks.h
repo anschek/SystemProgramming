@@ -17,6 +17,7 @@ int _20_messageBoxGromUtfFile_Test();
 int _21_externalProcessLaunch_Test();
 int _22_analysisOfExitCodes_Test();
 int _23_dllSegmentLength_Test();
+int _24_namedPipe_Test();
 int _25_list_Test();
 int _26_binaryFiles_Test();
 int _29_unnamedPipe_Test();

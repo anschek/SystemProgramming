@@ -5,8 +5,10 @@
 #include <io.h>
 #include <fcntl.h>
 
-#define UNNAMED_PIPE_TASK 1
+#define UNNAMED_PIPE_CLIENT 1
 #define LAUNCH_SIMPLE_PROCESS 2
+#define NAMED_PIPE_CLIENT 3
+#define SIZE_BUFFER 256
 
 void readAndPrintToConsole(HANDLE hRead) {
 	WCHAR* buffer = calloc(255, sizeof(WCHAR));
@@ -35,9 +37,18 @@ int _29_unnamedPipe(HANDLE hRead, HANDLE hWrite) {
 int main(int argc, char* argv[])
 {
 	HANDLE hRead, hWrite;//дескрипторы чтения и записи в анонимный канал
+
+	// данные для именнованного канала
+	LPCWSTR pipeName = L"//./pipe/MyPipe";
+	WCHAR outBuffer[SIZE_BUFFER];
+	WCHAR inBuffer[SIZE_BUFFER];
+	int messageCounter = 0;
+	HANDLE hPipe;
+	BOOL successConnect;
+
 	switch (atoi(argv[1]))
 	{
-	case UNNAMED_PIPE_TASK:	
+	case UNNAMED_PIPE_CLIENT:
 		_setmode(_fileno(stdout), _O_U16TEXT);
 		_setmode(_fileno(stdin), _O_U16TEXT);
 		hWrite = (HANDLE)atoi(argv[1]);
@@ -50,6 +61,48 @@ int main(int argc, char* argv[])
 		}
 		system("pause");
 		return 100500;
+
+	case NAMED_PIPE_CLIENT:
+		_setmode(_fileno(stdout), _O_U16TEXT);
+		_setmode(_fileno(stdin), _O_U16TEXT);
+		while (TRUE) {
+			hPipe = CreateFileW(
+				pipeName,
+				GENERIC_READ | GENERIC_WRITE,
+				0,
+				NULL,
+				OPEN_EXISTING,
+				0,
+				NULL
+			);
+			DWORD dwMode = PIPE_READMODE_MESSAGE; // режим работы канала
+			successConnect = SetNamedPipeHandleState(
+				hPipe,
+				&dwMode,
+				NULL,
+				NULL
+			);
+			Sleep(500);
+			if (!successConnect) {
+				wprintf(L"(клиент) сервер не отвечает\n");
+			}
+			else {
+				
+				// сообщение серверу
+				swprintf_s(outBuffer, SIZE_BUFFER, L"Сообщение серверу %d", ++messageCounter);
+				WriteFile(
+					hPipe,
+					outBuffer,
+					SIZE_BUFFER * sizeof(WCHAR),
+					NULL,
+					NULL
+				);
+				wprintf(L"(клиент) написал серверу: %s\n", outBuffer);
+				ReadFile(hPipe, inBuffer, SIZE_BUFFER* sizeof(WCHAR), NULL, NULL);
+				wprintf(L"(клиент) получил такой ответ сервера: %s\n", inBuffer);
+			}
+			CloseHandle(hPipe);
+		}
 
 	default:
 		wprintf(L"Ошибка аргумента\n");

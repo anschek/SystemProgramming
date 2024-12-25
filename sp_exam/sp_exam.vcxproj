@@ -144,6 +144,7 @@
     <ClCompile Include="_21_process.c" />
     <ClCompile Include="_22_exit_codes_analysis.c" />
     <ClCompile Include="_23_dll_segment_length.c" />
+    <ClCompile Include="_24_named_pipe.c" />
     <ClCompile Include="_25_list.c" />
     <ClCompile Include="_26_binary_files.c" />
     <ClCompile Include="_27_cmd_args.c" />
