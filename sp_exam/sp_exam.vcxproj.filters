@@ -84,5 +84,11 @@
     <ClCompile Include="_19_factorial_in_thread.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
+    <ClCompile Include="_16_clipboard_and_processes.c">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="_6_hooks_get_key_name_text.c">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

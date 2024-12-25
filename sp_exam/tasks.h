@@ -1,11 +1,13 @@
 int _1_dll_Test();
 int _4_textFiles_Test();
+int _6_hooksGetKeyNameText_Test();
 int _8_numToStringAndConcat_Test();
 int _9_lpwstrToNum_Test();
 int _10_bufferInOutStrings_Test();
 int _11_threads_Test();
 int _13_strToArrayOfNumbers_Test();
 int _14_registryInOutStrings_Test();
+int _16_clipboardForProcessesCommunication_Test();
 int _17_registryInOutNumbers_Test();
 int _18_threadingStopwatch_Test();
 int _19_factorialInSingleThread_Test();
