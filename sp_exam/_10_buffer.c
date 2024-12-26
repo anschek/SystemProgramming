@@ -34,7 +34,7 @@ LPWSTR ReadFromClipboard() {
 }
 
 
-int _10_bufferInOutStrings_Test() {
+int _10_clipboardInOutStrings_Test() {
 	WriteToClipboard(L"Новый текст должен быть доступен из системного буфера обмена");
 	LPWSTR clipboardContent = ReadFromClipboard();
 	MessageBox(NULL, clipboardContent, L"В буфере было записано", MB_OK);

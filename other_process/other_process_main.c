@@ -8,6 +8,9 @@
 #define UNNAMED_PIPE_CLIENT 1
 #define LAUNCH_SIMPLE_PROCESS 2
 #define NAMED_PIPE_CLIENT 3
+#define CLIPBOARD_COMMUNICATION 4
+
+
 #define SIZE_BUFFER 256
 
 void readAndPrintToConsole(HANDLE hRead) {
@@ -34,6 +37,27 @@ int _29_unnamedPipe(HANDLE hRead, HANDLE hWrite) {
 	return GetLastError();
 }
 
+int WriteToClipboard(LPWSTR str) {
+	size_t strSize = (wcslen(str) + 1) * sizeof(WCHAR); // общий размер сообщения
+
+	HANDLE hGlobalMemory = GlobalAlloc(GMEM_MOVEABLE, strSize); // выделенеи памяти в глобальной области
+	memcpy(GlobalLock(hGlobalMemory), str, strSize); // копирование строки в глобальную память
+	GlobalUnlock(hGlobalMemory); // вернуть доступ остальным к глобальной памяти
+
+	OpenClipboard(0);
+	EmptyClipboard(); // очистить
+	SetClipboardData(CF_UNICODETEXT, hGlobalMemory); // записать данные формата текст юникода
+	CloseClipboard();
+	return 0;
+}
+
+LPWSTR ReadFromClipboard() {
+	OpenClipboard(0);
+	LPWSTR content = (LPWSTR)GetClipboardData(CF_UNICODETEXT); // прочитать данные формата текст юникода
+	CloseClipboard();
+	return content;
+}
+
 int main(int argc, char* argv[])
 {
 	HANDLE hRead, hWrite;//дескрипторы чтения и записи в анонимный канал
@@ -45,6 +69,9 @@ int main(int argc, char* argv[])
 	int messageCounter = 0;
 	HANDLE hPipe;
 	BOOL successConnect;
+
+	int clipboardMessageCount;
+	LPWSTR serverClipboardMessage;
 
 	switch (atoi(argv[1]))
 	{
@@ -103,6 +130,22 @@ int main(int argc, char* argv[])
 			}
 			CloseHandle(hPipe);
 		}
+
+	case CLIPBOARD_COMMUNICATION:
+		_setmode(_fileno(stdout), _O_U16TEXT);
+		_setmode(_fileno(stdin), _O_U16TEXT);
+
+		clipboardMessageCount = 3;
+		for (int i = 0; i < clipboardMessageCount; ++i) {
+			serverClipboardMessage = ReadFromClipboard();
+			wprintf(L"(процесс 2) процес 1 написал: %s\n", serverClipboardMessage);
+
+			swprintf_s(outBuffer, SIZE_BUFFER, L"ОКей %d", i);
+			WriteToClipboard(outBuffer);
+
+			Sleep(5000);
+		}
+		break;
 
 	default:
 		wprintf(L"Ошибка аргумента\n");
