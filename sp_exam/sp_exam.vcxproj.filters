@@ -97,7 +97,7 @@
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
     <ClCompile Include="_24_named_pipe.c">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Файлы ресурсов</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

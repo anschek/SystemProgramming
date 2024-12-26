@@ -128,6 +128,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="other_process_main.c" />
+    <ClCompile Include="_16_clipboard_and_processes.c" />
+    <ClCompile Include="_24_named_pipe.c" />
+    <ClCompile Include="_29_unnamed_pipe.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="tasks.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
