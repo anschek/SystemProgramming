@@ -7,3 +7,4 @@ int _19_calcFactorialInSingleThread_Test();
 int _21_processes_Test();
 int _22_analysisOfExitCodes_Test();
 int _26_binaryFiles_Test();
+int _29_unnamedPipe_Tests();
